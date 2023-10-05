@@ -6,8 +6,10 @@ interface ButtonNavProps {
 
 export const ButtonNav: React.FC<ButtonNavProps> = ({ title }) => {
   return (
-    <button className="bg-gray-500 hover:bg-slate-400 text-white px-4 py-2">
-      {title}
+    <button className="px-4 py-2">
+      <p className="hover:text-shadow hover:text-light-100 text-light-300 text-base">
+        {title}
+      </p>
     </button>
   );
 };
