@@ -61,7 +61,6 @@ export const HomePage = () => {
   ];
   const tiktoksApoiadores = [
     "https://www.tiktok.com/@andressahcatty/video/7284070820505324805",
-    "",
   ];
   return (
     <>
