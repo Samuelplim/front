@@ -1,14 +1,14 @@
 import React from "react";
-import { TikTokEmbed } from "react-social-media-embed";
 
 interface TikTokProps {
   url: string;
 }
 
 const TikTokVideo: React.FC<TikTokProps> = ({ url }) => {
+  const match = url.match(/@([^/]+)/) || ["", ""];
   return (
-    <div className="bg-black">
-      <TikTokEmbed width={350} url={url} />
+    <div className="bg-black p-2">
+      <a href={url}>@{match[1]}</a>
     </div>
   );
 };
