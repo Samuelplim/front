@@ -84,12 +84,12 @@ export const HomePage = () => {
     <main className="bg-dark-400 justify-center items-center py-4">
       <div className="px-4 my-4 bg-dark-100">
         <p>CONHEÇA NOSSAS REDES SOCIAIS</p>
-        <div className="flex gap-2 mt-2">
+        <div className="flex flex-wrap gap-2 mt-2">
           {redesSociais.map(_renderRedesSociais)}
         </div>
       </div>
       <Section title="Somo a VAT - Vida Além do trabalho">
-        <p>
+        <p className="text-justify">
           A (VAT) é mais do que apenas um movimento. Somos uma voz unida que
           ecoa em prol da dignidade no trabalho e na justiça salarial. Nascemos
           da necessidade de lutar contra a opressão, a escala 6x1 e as jornadas
@@ -97,7 +97,7 @@ export const HomePage = () => {
         </p>
         <div className="mt-4">
           <p className="text-lg text-light-100">Missão</p>
-          <p>
+          <p className="text-justify">
             defender todos os trabalhadores, não importa onde estejam, quem são
             ou o que fazem. Acreditamos que o trabalho deve enriquecer vidas,
             não esgotá-las.
@@ -136,7 +136,7 @@ export const HomePage = () => {
       </Section>
 
       <Section title="Depoimentos e Denúncias">
-        <p className="text-sm">
+        <p className="text-sm text-justify">
           Pesquise sobre o movimento vat nas redes sociais, você encontrará
           denuncias de todas as áreas, serviço, comercio, saude... Você também
           pode ajudar nessa ação. Utilize as tags #vat #fimdaescala6x1
@@ -144,7 +144,7 @@ export const HomePage = () => {
         <div className="mt-6 flex flex-col gap-4">
           {tiktoksDepoimentos.map((item, index) => (
             <div className=" bg-dark-800 px-2 py-1 rounded">
-              <p className="text-sm">{item.descricao}</p>
+              <p className="text-sm text-justify">{item.descricao}</p>
               <TikTokVideo key={index} url={item.link} />
             </div>
           ))}
