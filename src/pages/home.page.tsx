@@ -1,4 +1,3 @@
-import { ButtonNav } from "../components/buttonNav";
 import { Section } from "../components/section";
 import TikTokVideo from "../components/tiktokVideo";
 
@@ -6,6 +5,11 @@ type LinkProps = {
   title: string;
   link: string;
 };
+type TiktoksDepoimentos = {
+  link: string;
+  descricao: string;
+};
+/*
 navigator.geolocation.getCurrentPosition(
   function (position) {
     console.log(position);
@@ -15,6 +19,7 @@ navigator.geolocation.getCurrentPosition(
   },
   { enableHighAccuracy: false, maximumAge: 100000, timeout: 30000 }
 );
+*/
 export const HomePage = () => {
   const redesSociais: LinkProps[] = [
     { title: "Instagram", link: "https://instagram.com/movimento_vat" },
@@ -36,8 +41,31 @@ export const HomePage = () => {
     "https://www.tiktok.com/@francisquinhom/video/7285801308282621189",
     "https://www.tiktok.com/@samuelbscar/video/7285768666333891846",
     "https://www.tiktok.com/@mariicvidigal/video/7286438361747754246",
+    "https://www.tiktok.com/@marcellagarbim/video/7286577439889771782",
+    "https://www.tiktok.com/@lelosincero/video/7282408014253051142?q=vat&t=1696557657588",
   ];
-  const tiktosDepoimentos = [];
+  const tiktoksDepoimentos: TiktoksDepoimentos[] = [
+    {
+      descricao:
+        "Denuncia a escala abusiva que sua mãe de quase 50 anos e que trabalha na escala 6x1 , quase demaiou no trabalho devido a demanda no trabalho somado a falta de descanço adequado.",
+      link: "https://www.tiktok.com/@estagio.remoto/video/7286573792686787846",
+    },
+    {
+      descricao:
+        "Essa estudante denuncia que devido a essa escala, e o salário atual, está sofrendo de muita ansiedade, tornando ela menos produtiva para todos os âmbitos.",
+      link: "https://www.tiktok.com/@cris_apenas/video/7286155336732396805",
+    },
+    {
+      descricao:
+        "Denuncia que já deixou de comemorar o aniversário da sua filha, além de denunciar o tratamento perverso que a CLT permite.",
+      link: "https://www.tiktok.com/@fabi.bubu/video/7286474387946016005",
+    },
+    {
+      descricao:
+        "A Farmacêutica denúncia que já deve que trabalhar 7 dias seguidos para cobrir seus colegas de trabalho. Denuncia também que em seu ponto de vista a escala 6x1 é a pior entre as outras modalidades de escala.",
+      link: "https://www.tiktok.com/@oifarmas/video/7285530653083405574",
+    },
+  ];
 
   const _renderRedesSociais = (item: LinkProps, index: number) => {
     return (
@@ -100,14 +128,28 @@ export const HomePage = () => {
       </Section>
       <Section title="Apoiadores da causa">
         <p>Conheça alguns apoiadores do projeto VAT no TikTok</p>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap gap-2">
           {tiktoksApoiadores.map((item, index) => (
             <TikTokVideo key={index} url={item} />
           ))}
         </div>
       </Section>
 
-      <Section title="Depoimentos e Denuncias">d</Section>
+      <Section title="Depoimentos e Denúncias">
+        <p className="text-sm">
+          Pesquise sobre o movimento vat nas redes sociais, você encontrará
+          denuncias de todas as áreas, serviço, comercio, saude... Você também
+          pode ajudar nessa ação. Utilize as tags #vat #fimdaescala6x1
+        </p>
+        <div className="mt-6 flex flex-col gap-4">
+          {tiktoksDepoimentos.map((item, index) => (
+            <div className=" bg-dark-800 px-2 py-1 rounded">
+              <p className="text-sm">{item.descricao}</p>
+              <TikTokVideo key={index} url={item.link} />
+            </div>
+          ))}
+        </div>
+      </Section>
     </main>
   );
 };
